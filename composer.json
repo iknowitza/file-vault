@@ -1,0 +1,56 @@
+{
+    "name": "iknowitza/file-vault",
+    "description": "",
+    "keywords": [
+        "laravel", "encrypt", "decrypt", "encryption", "decryption",
+        "cbc", "php", "file", "file-vault"
+    ],
+    "homepage": "https://github.com/iknowitza/file-vault",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Anton de Jager",
+            "email": "anton@iknowit.co.za",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^9.0 || ^10.0 ",
+        "ext-openssl": "*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0|^7.0",
+        "phpstan/phpstan": "^2.2",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "iknowitza\\FileVault\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "iknowitza\\FileVault\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "iknowitza\\FileVault\\FileVaultServiceProvider"
+            ],
+            "aliases": {
+                "FileVault": "iknowitza\\FileVault\\Facades\\FileVault"
+            }
+        }
+    }
+}
